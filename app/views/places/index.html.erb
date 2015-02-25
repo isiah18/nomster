@@ -1,1 +1,8 @@
-<h1> Welcome to my awesome Web App </h1>
+<%= @places.each do |resort| %>
+	<div>
+		<h1><%= resort.name %></h1><br />
+		<i><%= resort.address %></i><br />
+		<p><%= resort. description %></p><br />
+	</div>
+	<hr />
+<% end %>
