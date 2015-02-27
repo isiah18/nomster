@@ -20,6 +20,10 @@ gem 'bootstrap-sass',  '~> 3.3.3'
 
 # Add autoprefixer
 gem 'autoprefixer-rails'
+
+# Add paginate
+gem 'will_paginate', '~>3.0.5'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
