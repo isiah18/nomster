@@ -1,8 +1,10 @@
 <% @places.each do |resort| %>
 	<div class = "booyah-box col-xs-10 col-xs-offset-1">
 		<h1><%= resort.name %></h1><br />
+		<div class = "extra_info">
 		<i><%= resort.address %></i><br />
 		<p><%= resort.description %></p><br />
+		</div>
 	</div>
 <% end %>
 

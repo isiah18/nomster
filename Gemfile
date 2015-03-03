@@ -30,6 +30,9 @@ gem 'will_paginate', '~>3.0.5'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Adding Devise gem for user authentication
+gem 'devise', '>= 3.2.4'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
