@@ -4,7 +4,8 @@
 		<i><%= resort.address %></i><br />
 		<p><%= resort.description %></p><br />
 	</div>
-	<div class = "apple_pagination">
-	<%= will_paginate @places %>
-	</div>
 <% end %>
+
+<div class = "apple_pagination">
+	<%= will_paginate @places %>
+</div>
