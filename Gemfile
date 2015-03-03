@@ -21,6 +21,9 @@ gem 'bootstrap-sass',  '~> 3.3.3'
 # Add autoprefixer
 gem 'autoprefixer-rails'
 
+# Add simple form
+gem 'simple_form'
+
 # Add paginate
 gem 'will_paginate', '~>3.0.5'
 
