@@ -4,6 +4,10 @@
 		<div class = "extra_info">
 		<i><%= resort.address %></i><br />
 		<p><%= resort.description %></p><br />
+		
+		<% if resort.user.present? %>
+		<small><%= resort.user.email %></small>
+		<% end %>
 		</div>
 	</div>
 <% end %>
