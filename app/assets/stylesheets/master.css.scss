@@ -76,3 +76,10 @@ body{
   .btn.btn-danger{
     color:#343536;
   }
+
+  .field_with_errors {
+    color: #ff3333;
+    background_color: #FFEEEE;
+    border-radius: 3px;
+    padding: 8px;
+  }
