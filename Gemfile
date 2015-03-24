@@ -27,6 +27,12 @@ gem 'simple_form'
 # Add paginate
 gem 'will_paginate', '~>3.0.5'
 
+# Add geocoder for google maps
+gem 'geocoder'
+
+# Add figaro for the api keys and such
+gem "figaro", ">= 1.0.0"
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
