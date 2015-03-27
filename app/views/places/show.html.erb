@@ -38,7 +38,7 @@
 		<% if current_user && @place.user == current_user %>
 			<%= link_to 'Edit', edit_place_path(@place), :class => 'btn btn-info' %>
 			<!-- Button trigger modal for adding photo -->
-			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myPhotoModal">
 			  Add Picture
 			</button>
 			<%= link_to 'Destroy', place_path(@place), :method => :delete, :data => {:confirm => 'Are you sure you want to delete this?'}, :class => 'btn btn-danger' %>
@@ -49,16 +49,20 @@
 	<br />
 	
 	
-	<div class='clear'></div>
+	<div class="clear"></div>
 
-	<% @place.photos.each do |pic| %>
-		<div class= 'col-xs-12 col-sm-5 col-sm-offset-1'>	
-			<% if pic.picture.present? %>
-				<%= image_tag pic.picture %><br />
-			<% end %>
-				<%= pic.caption %>
-		</div>
-	<% end %>
+	<div class="row">
+		<% @place.photos.each do |pic| %>
+			<div class= "col-xs-6 col-md-3 col-md-offset-1 thumbnail">	
+				<% if pic.picture.present? %>
+					<%= image_tag pic.picture %><br />
+				<% end %>
+			
+					<%= pic.caption %>
+			</div>
+		<% end %>
+	</div>
+
 </div>
 
 <div class="clear"></div>
@@ -67,7 +71,7 @@
 
 
 <!-- Modal For Photos -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -98,7 +102,7 @@
 
 
 <!-- Modal For Comment -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myCommentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -107,16 +111,16 @@
       </div>
       <%= simple_form_for @comment, :url => place_comments_path(@place) do |f| %>
       	<div class="modal-body">
-			<%= f.input :message %>
-			<%= f.input :rating, :as => :select, :collection => Comment::RATINGS %>
-			
-		</div>
+					<%= f.input :message %>
+					<%= f.input :rating, :as => :select, :collection => Comment::RATINGS %>
+				</div>
+
       	<div class="modal-footer">
         	<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
        		<%= f.submit "Add Comment", :class => 'btn btn-info' %>
       	</div>
-    	</div>
-   	 <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
@@ -125,8 +129,8 @@
 <div class = "col-xs-10 col-xs-offset-1">
 <h1 class="pull-left"> Comments </h1>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
+<!-- Button trigger Comment modal -->
+<button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myCommentModal">
   Add A Comment
 </button>
 </div>

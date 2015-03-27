@@ -10,6 +10,7 @@
 					<%= image_tag resort.photos.last.picture %>
 				</div>
 			<% end %>
+			
 			<br />
 			<p><%= resort.description %></p><br />
 			
@@ -17,7 +18,8 @@
 				<small><%= resort.user.email %></small>
 			<% end %>
 
-			
+			<div class= "clear"></div>
+
 			<% if resort.comments.present? %>
 				<div class = "col-xs-9">
 					<blockquote>
