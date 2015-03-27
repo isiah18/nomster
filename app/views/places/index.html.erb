@@ -5,9 +5,11 @@
 		<h1><%= link_to resort.name, place_path(resort) %></h1><br />
 		<div class = "extra_info">
 			<i><%= resort.address %></i>
-			<div class="pull-right">
-				<%= image_tag resort.photos.last.picture %>
-			</div>
+			<% if resort.photos.present? %>
+				<div class="pull-right">
+					<%= image_tag resort.photos.last.picture %>
+				</div>
+			<% end %>
 			<br />
 			<p><%= resort.description %></p><br />
 			
@@ -16,16 +18,17 @@
 			<% end %>
 
 			
-		
-			<div class = "col-xs-9">
-				<blockquote>
-					<% if resort.comments.last.humanized_rating.present? %>
-						 <i><%= resort.comments.last.humanized_rating %></i> --
-					<% end %>
-					<%= resort.comments.last.message %>
-					<small> <%= resort.comments.last.user.email %></small> 
-				</blockquote>
-			</div>
+			<% if resort.comments.present? %>
+				<div class = "col-xs-9">
+					<blockquote>
+						<% if resort.comments.last.humanized_rating.present? %>
+							 <i><%= resort.comments.last.humanized_rating %></i> --
+						<% end %>
+						<%= resort.comments.last.message %>
+						<small> <%= resort.comments.last.user.email %></small> 
+					</blockquote>
+				</div>
+			<% end %>
 		</div>
 	</div>
 <% end %>
