@@ -4,15 +4,20 @@
 	<div class = "booyah-box col-xs-10 col-xs-offset-1">
 		<h1><%= link_to resort.name, place_path(resort) %></h1><br />
 		<div class = "extra_info">
-			<i><%= resort.address %></i><br />
+			<i><%= resort.address %></i>
+			<div class="pull-right">
+				<%= image_tag resort.photos.last.picture %>
+			</div>
+			<br />
 			<p><%= resort.description %></p><br />
 			
 			<% if resort.user.present? %>
 				<small><%= resort.user.email %></small>
 			<% end %>
-		
 
-			<div class = "col-xs-12">
+			
+		
+			<div class = "col-xs-9">
 				<blockquote>
 					<% if resort.comments.last.humanized_rating.present? %>
 						 <i><%= resort.comments.last.humanized_rating %></i> --

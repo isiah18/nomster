@@ -39,6 +39,9 @@ gem "figaro", ">= 1.0.0"
 # Adding Devise gem for user authentication
 gem 'devise', '>= 3.2.4'
 
+# Adding carrierwave for image uploads
+gem 'carrierwave'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
