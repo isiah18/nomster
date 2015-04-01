@@ -50,7 +50,7 @@
 			<i><%= resort.address %></i>
 			<% if resort.photos.present? %>
 				<div class="pull-right">
-					<%= image_tag resort.photos.last.picture %>
+					<%= image_tag resort.photos.first.picture %>
 				</div>
 			<% end %>
 
