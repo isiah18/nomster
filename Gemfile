@@ -24,6 +24,9 @@ gem 'autoprefixer-rails'
 # Add simple form
 gem 'simple_form'
 
+# Add Factory Girl
+gem 'factory_girl_rails', "~> 4.0"
+
 # Add paginate
 gem 'will_paginate', '~>3.0.5'
 

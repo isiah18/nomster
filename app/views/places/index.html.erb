@@ -46,14 +46,8 @@
 <% @places.each do |resort| %>
 	<div class = "booyah-box col-xs-10 col-xs-offset-1">
 		<h1><%= link_to resort.name, place_path(resort) %></h1><br />
-		<div class = "extra_info">
+		<div class = "extra_info col-xs-8 pull-left">
 			<i><%= resort.address %></i>
-			<% if resort.photos.present? %>
-				<div class="pull-right">
-					<%= image_tag resort.photos.first.picture %>
-				</div>
-			<% end %>
-
 			<br />
 			<p><%= resort.description %></p><br />
 			
@@ -64,17 +58,23 @@
 			<div class= "clear"></div>
 
 			<% if resort.comments.present? %>
-				<div class = "col-xs-9">
-					<blockquote>
-						<% if resort.comments.last.humanized_rating.present? %>
-							 <i><%= resort.comments.last.humanized_rating %></i> --
-						<% end %>
-						<%= resort.comments.last.message %>
-						<small> <%= resort.comments.last.user.email %></small> 
-					</blockquote>
-				</div>
+  			<blockquote>
+  				<% if resort.comments.last.humanized_rating.present? %>
+  					 <i><%= resort.comments.last.humanized_rating %></i> --
+  				<% end %>
+  				<%= resort.comments.last.message %>
+  				<small> <%= resort.comments.last.user.email %></small> 
+  			</blockquote>
 			<% end %>
 		</div>
+    <div class= "col-xs-4 pull-right ">
+      <% if resort.photos.present? %>
+        <div class="pull-right">
+          <%= image_tag resort.photos.first.picture %>
+        </div>
+      <% end %>
+    </div>
+
 	</div>
 <% end %>
 
