@@ -1,7 +1,7 @@
 FactoryGirl.define do
 	factory :comment do
-		message "nom nom"
-		rating "5_stars"
+		message "nom nom nom"
+		rating "5_star"
 		association :user
 		association :place
 	end	
